@@ -1,9 +1,13 @@
+#Module imports
+
+import modules.query as query
+
 #flask imports
 
 from flask import Flask
 from flask import request
 
-import configparser
+import ConfigParser as configparser
 import json
 
 import subprocess
@@ -44,7 +48,7 @@ def queryDevices():
   data = subprocess.getoutput("scanimage -L")
   return parseDevList(data)
 
-queryDevices()
+print(query.Devices())
 
 
 #api routes
